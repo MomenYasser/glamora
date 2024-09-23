@@ -1,0 +1,7 @@
+<!-- استخدام FormInputComponent داخل FormParentComponent -->
+<app-form-input [label]="inputLabel"
+                (valueChange)="handleInputChange($event)">
+</app-form-input>
+
+<!-- يمكن عرض المدخلات أو استخدامها هنا -->
+<p>You entered: {{ inputValue }}</p>

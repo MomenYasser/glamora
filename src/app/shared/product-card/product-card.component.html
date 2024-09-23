@@ -1,0 +1,7 @@
+<div class="product-card">
+  <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image" />
+  <div class="product-info">
+    <h3>{{ product.name }}</h3>
+    <p>Price: {{ product.price | currency }}</p>
+  </div>
+</div>

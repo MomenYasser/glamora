@@ -1,0 +1,13 @@
+<div [formGroup]="formGroup" class="form-group">
+  <label for="{{ controlName }}">{{ label }}</label>
+  <input [type]="type"
+         id="{{ controlName }}"
+         [formControlName]="controlName"
+         [placeholder]="placeholder"
+         class="form-control"
+         [ngClass]="{ 'is-invalid': formGroup.get(controlName)?.touched && formGroup.get(controlName)?.invalid }" />
+
+  <div *ngIf="errorMessage" class="invalid-feedback">
+    {{ errorMessage }}
+  </div>
+</div>

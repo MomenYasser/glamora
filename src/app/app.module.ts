@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms'; // استيراد Reactive
 import { AppComponent } from './app.component'; // استيراد المكون الجذري للتطبيق
 import { AppRoutesModule } from './app-routing.module'; // استيراد وحدة التوجيه المخصصة التي تعرف مسارات التطبيق
 import { AuthModule } from './auth/auth.module'; // استيراد وحدة المصادقة
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component'; // تأكد من تعديل المسار حسب هيكل المشروع
+
 
 // استيراد المكونات الجديدة
 import { HomeModule } from './home/home.module'; // استيراد وحدة الصفحة الرئيسية
@@ -24,7 +26,8 @@ import { BlogService } from './core/services/blog.service'; // استيراد خ
     ProductListComponent, // إعلان مكون قائمة المنتجات
     ProductDetailsComponent, // إعلان مكون تفاصيل المنتج
     CategoryDetailsComponent, // إعلان مكون تفاصيل الفئة
-    PostDetailsComponent // إعلان مكون تفاصيل المنشور
+    PostDetailsComponent,// إعلان مكون تفاصيل المنشور
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule, // استيراد BrowserModule لتشغيل التطبيق في المتصفح

@@ -8,6 +8,9 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
   imports: [
     CommonModule,
     RouterModule.forChild([{ path: '', component: AdminDashboardComponent }])
+  ],
+  exports: [
+    AdminDashboardComponent, // تأكد من تصدير هذا المكون إذا كنت ستستخدمه في وحدات أخرى
   ]
 })
 export class AdminModule { }

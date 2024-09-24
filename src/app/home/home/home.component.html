@@ -1,11 +1,17 @@
-<div class="home-container">
-  <h2>الصفحة الرئيسية</h2>
+<div *ngIf="isAdmin; else userContent">
+  <h1>Welcome Admin!</h1>
+  <!-- تضمين مكون لوحة تحكم الإدمن -->
+  <!-- <app-admin-dashboard></app-admin-dashboard> -->
+</div>
+
+<ng-template #userContent>
+  <h1>Welcome User!</h1>
+  <h2>All Products:</h2>
   <div class="product-cards">
     <div *ngFor="let product of products" class="product-card">
-      <h3>{{ product.name }}</h3>
-      <img [src]="product.imageUrl" alt="{{ product.name }}">
+      <h3>{{ product.title }}</h3>
       <p>{{ product.description }}</p>
-      <p>السعر: {{ product.price }} جنيه</p>
+      <p>Price: {{ product.price }} $</p>
     </div>
   </div>
-</div>
+</ng-template>

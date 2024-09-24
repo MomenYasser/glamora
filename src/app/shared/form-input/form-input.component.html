@@ -1,5 +1,7 @@
 <div [formGroup]="formGroup" class="form-group">
   <label for="{{ controlName }}">{{ label }}</label>
+
+  <!-- input field with validation styling -->
   <input [type]="type"
          id="{{ controlName }}"
          [formControlName]="controlName"
@@ -7,7 +9,9 @@
          class="form-control"
          [ngClass]="{ 'is-invalid': formGroup.get(controlName)?.touched && formGroup.get(controlName)?.invalid }" />
 
-  <div *ngIf="errorMessage" class="invalid-feedback">
+  <!-- error message when validation fails -->
+  <div *ngIf="formGroup.get(controlName)?.touched && formGroup.get(controlName)?.invalid" class="invalid-feedback">
     {{ errorMessage }}
   </div>
 </div>
+

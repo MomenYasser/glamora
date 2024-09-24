@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';  // استيراد Http
 import { ReactiveFormsModule } from '@angular/forms'; // استيراد ReactiveFormsModule لدعم النماذج التفاعلية
 import { AppComponent } from './app.component'; // استيراد المكون الجذري للتطبيق
 import { AppRoutesModule } from './app-routing.module'; // استيراد وحدة التوجيه المخصصة التي تعرف مسارات التطبيق
+import { AuthModule } from './auth/auth.module'; // استيراد وحدة المصادقة
 
 // استيراد المكونات الجديدة
 import { HomeModule } from './home/home.module'; // استيراد وحدة الصفحة الرئيسية
@@ -30,7 +31,8 @@ import { BlogService } from './core/services/blog.service'; // استيراد خ
     AppRoutesModule, // استيراد وحدة التوجيه لإعداد التوجيه كما هو محدد في تكوين المسارات
     HttpClientModule, // استيراد HttpClientModule لتمكين الخدمات HTTP في التطبيق
     ReactiveFormsModule, // استيراد ReactiveFormsModule لدعم النماذج التفاعلية
-    HomeModule // استيراد وحدة الصفحة الرئيسية
+    HomeModule, // استيراد وحدة الصفحة الرئيسية
+    AuthModule // استيراد وحدة المصادقة
   ],
   providers: [
     ProductService, // تقديم خدمة المنتجات
@@ -40,5 +42,6 @@ import { BlogService } from './core/services/blog.service'; // استيراد خ
   bootstrap: [AppComponent] // تحديد AppComponent كمكون الدخول الرئيسي للتطبيق
 })
 export class AppModule { } // تعريف الوحدة الرئيسية التي تطلق التطبيق
+
 
 

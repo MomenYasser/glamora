@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,15 +8,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username: string = '';
-  password: string = '';
+  loginForm: FormGroup;
 
-  constructor(private router: Router) { }
+  constructor(private fb: FormBuilder, private router: Router) {
+    this.loginForm = this.fb.group({
+      username: ['', [Validators.required, Validators.minLength(3)]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+  }
 
   login() {
-    // هنا يمكنك إضافة منطق المصادقة
-    localStorage.setItem('user', this.username); // تخزين اسم المستخدم في localStorage
-    this.router.navigate(['/home']); // إعادة التوجيه إلى الصفحة الرئيسية بعد تسجيل الدخول
+    if (this.loginForm.valid) {
+      const { username, password } = this.loginForm.value;
+      // Authentication logic can be added here
+      localStorage.setItem('user', username); // Store username
+      this.router.navigate(['/home']); // Navigate to home page
+    } else {
+      // Handle form validation failure (e.g., show an error message)
+    }
   }
 }
+
 

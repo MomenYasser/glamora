@@ -10,7 +10,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     RouterModule.forChild([{ path: '', component: AdminDashboardComponent }])
   ],
   exports: [
-    AdminDashboardComponent, // تأكد من تصدير هذا المكون إذا كنت ستستخدمه في وحدات أخرى
+    // AdminDashboardComponent, // تأكد من تصدير هذا المكون إذا كنت ستستخدمه في وحدات أخرى
   ]
 })
 export class AdminModule { }

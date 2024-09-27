@@ -1,7 +1,7 @@
 <div *ngIf="isAdmin; else userContent">
   <h1>Welcome Admin!</h1>
    تضمين مكون لوحة تحكم الإدمن 
-   <app-admin-dashboard></app-admin-dashboard> 
+   <!-- <app-admin-dashboard></app-admin-dashboard>  -->
 </div>
 
 <ng-template #userContent>
@@ -65,14 +65,16 @@
   </div>
 
   <hr />
+
   <h2 class="custom-heading" id="categories-section">Categories</h2>
+
   <div class="sections">
     <div class="section" *ngFor="let category of categories">
       <div class="Header">
         <img width="25" height="25" src="https://img.icons8.com/parakeet-line/48/person-male.png" alt="category-icon" />
         <h1>{{ category.name }}</h1>
       </div>
-      <a [href]="category.url" target="_blank">View Products</a>
+      <a [href]="category.url" target="_blank">View Category</a>
     </div>
   </div>
 
